@@ -21,21 +21,21 @@ ai-voice-agent/
 ├── README.md                    # Project documentation with setup and usage instructions
 └── LICENSE                      # Optional: license file for your project
 
-1. ## Install the requirements
+ ## Install the requirements
    '''bash
    pip install -r requirements.txt
 
-2. ## Running the Application
+## Running the Application
    '''bash
    uvicorn app.main:app --host 0.0.0.0 --port 8000
    Then, visit `http://127.0.0.1:8000` in your web browser to access the voice assistant interface.
 
-4. ## Video Demo
+## Video Demo
 [Link to your video demo here]
 
-5. ## Logging
+## Logging
 The application includes logging to track API requests and responses for debugging and monitoring.
 
-6. ## License
+## License
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 

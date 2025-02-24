@@ -36,4 +36,58 @@ ai-voice-agent/
 ## Logging
 The application includes logging to track API requests and responses for debugging and monitoring.
 
+## Project Documentation: Docker Setup
+
+# Overview
+This project uses Docker to streamline the development and deployment processes. Below is a step-by-step guide on how to use Docker with this project.
+
+# Dockerfile
+- The Dockerfile is located in the root directory of the project. It defines how to build the Docker image for this project.
+- Key Sections of the Dockerfile
+  • Base Image: The starting point of your Docker image. e.g., FROM python:3.9
+  • Working Directory: The directory inside the container where the application will run. e.g., WORKDIR /app
+  • Copy Files: Copy your application files into the container. e.g., COPY . .
+  • Install Dependencies: Install any necessary packages. e.g., RUN pip install -r requirements.txt
+  • Expose Port: The port that the application will use. e.g., EXPOSE 5000
+  • Run Command: The command to run your application. e.g., CMD ["python", "app.py"]
+  
+# Building the Docker Image
+To build the Docker image, navigate to the root of your project in the terminal and run the following command:
+  bash
+  docker build -t yourusername/project-name:tag .
+
+  • Replace yourusername with your Docker Hub username.
+  • Replace project-name with the name of your project.
+  • Optionally replace tag with a specific version (e.g., v1.0).
+  
+# Pushing the Docker Image to Docker Hub
+If you want to push the Docker image to Docker Hub, make sure you are logged in:
+- bash
+  docker login
+
+- Then, push the image using:
+bash
+  docker push yourusername/project-name:tag
+
+# Pulling the Docker Image from Docker Hub
+Users can access the Docker image on Docker Hub with the following command:
+bash
+  docker pull yourusername/project-name:tag
+
+# Running the Docker Container
+To create and run a container from the image, use the command:
+bash
+docker run -p host_port:container_port yourusername/project-name:tag
+
+  • Replace host_port with the port on your local machine you want to use (e.g., 8080).
+  • Replace container_port with the port exposed in your Dockerfile (e.g., 5000).
+  
+# Accessing Your Application
+Once the container is running, you can access your application in your web browser at:
+
+http://localhost:your_host_port
+
+# Conclusion
+This guide should help you navigate the process of building, running, and accessing the Docker container and images for this project. If you have any further questions, feel free to reach out.
+
 

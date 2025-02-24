@@ -59,29 +59,35 @@ To build the Docker image, navigate to the root of your project in the terminal 
   • Replace yourusername with your Docker Hub username.
   • Replace project-name with the name of your project.
   • Optionally replace tag with a specific version (e.g., v1.0).
-  
-# Pushing the Docker Image to Docker Hub
-If you want to push the Docker image to Docker Hub, make sure you are logged in:
-- bash
-  docker login
 
-- Then, push the image using:
-bash
-  docker push yourusername/project-name:tag
+# Alternatively, you can run the image using the terminal in VS Code:
+1.	Open the Terminal: You can do this by selecting `Terminal` from the top menu and then `New Terminal`.
+2.	Run the Docker Command: Execute the following command in the terminal:
+   docker run -d --name ai-voice-agent swatidix14/ai-voice-agent:latest
+2.	Here, the `-d` flag runs the container in detached mode, and `--name ai-voice-agent` gives your container a name for easier management.
+After running this command, your Docker container should start based on the specified image. You can check its status by executing:
+docker ps
+This will list all running containers, including your newly started one.
 
-# Pulling the Docker Image from Docker Hub
+Great! Now that you have your Docker image running, let’s go through the steps to log in to Docker Hub and view the image you pulled earlier.
+Step 1: Log in to Docker Hub
+	1.	Open the Terminal: If you haven’t already, open a new terminal in Visual Studio Code.
+	2.	Run the Login Command: Use the following command to log in to Docker Hub:
+    docker login
+
+
+Step 2: Pulling the Docker Image from Docker Hub
 Users can access the Docker image on Docker Hub with the following command:
 bash
   docker pull yourusername/project-name:tag
 
-# Running the Docker Container
-To create and run a container from the image, use the command:
-bash
-docker run -p host_port:container_port yourusername/project-name:tag
-
-  • Replace host_port with the port on your local machine you want to use (e.g., 8080).
-  • Replace container_port with the port exposed in your Dockerfile (e.g., 5000).
   
+Step 3: View Your Pulled Image
+To view the images that you have pulled (including the one from Docker Hub), you can use the following command:
+docker images
+This command will list all images on your local machine, including their repository names, tags, and image IDs. Look for `swatidix14/ai-voice-agent` in the list.
+  
+
 # Accessing Your Application
 Once the container is running, you can access your application in your web browser at:
 

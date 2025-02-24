@@ -21,13 +21,13 @@ ai-voice-agent/
 ├── README.md                    # Project documentation with setup and usage instructions
 └── LICENSE                      # Optional: license file for your project
 
- ## Install the requirements
-   '''bash
+ ## Install the requirement
+ 
    pip install -r requirements.txt
 
 ## Running the Application
-   '''bash
-   uvicorn app.main:app --host 0.0.0.0 --port 8000
+
+   uvicorn app.main:app --reload
    Then, visit `http://127.0.0.1:8000` in your web browser to access the voice assistant interface.
 
 ## Video Demo
@@ -55,7 +55,6 @@ This project uses Docker to streamline the development and deployment processes.
 To build the Docker image, navigate to the root of your project in the terminal and run the following command:
   bash
   docker build -t yourusername/project-name:tag .
-
   • Replace yourusername with your Docker Hub username.
   • Replace project-name with the name of your project.
   • Optionally replace tag with a specific version (e.g., v1.0).

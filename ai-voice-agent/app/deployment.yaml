@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ai-voice-agent
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ai-voice-agent
+  template:
+    metadata:
+      labels:
+        app: ai-voice-agent
+    spec:
+      containers:
+      - name: ai-voice-agent
+        image: swatidix14/ai-voice-agent:latest
+        ports:
+        - containerPort: 8000
+
+
+
+# https://hub.docker.com/r/swatidix14/ai-voice-agent.

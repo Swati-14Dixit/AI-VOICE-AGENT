@@ -1,0 +1,8 @@
+fastapi
+uvicorn
+motor 
+flask
+torch
+gtts
+transformers
+numpy == 1.26.4

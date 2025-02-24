@@ -30,9 +30,6 @@ ai-voice-agent/
    uvicorn app.main:app --reload
    Then, visit `http://127.0.0.1:8000` in your web browser to access the voice assistant interface.
 
-## Video Demo
-[Link to your video demo here]
-
 ## Logging
 The application includes logging to track API requests and responses for debugging and monitoring.
 

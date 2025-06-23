@@ -12,12 +12,6 @@ class InputText(BaseModel):
 @router.post("/process/")
 async def process_input(data: InputText):
     intent = recognize_intent(data.text)
-    return {"intent": intent}
-
-
-@router.post("/process/")
-async def process_input(data: InputText):
-    intent = recognize_intent(data.text)
     await insert_interaction(intent)  # Save interaction to the database
     return {"intent": intent}
    
